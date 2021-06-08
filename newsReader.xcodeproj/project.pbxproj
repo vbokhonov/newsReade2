@@ -15,6 +15,7 @@
 		428EBE8F2669E3B900ED90EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428EBE8D2669E3B900ED90EF /* LaunchScreen.storyboard */; };
 		428EBE972669E78500ED90EF /* NewsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EBE962669E78500ED90EF /* NewsApiService.swift */; };
 		428EBE9A2669EA7E00ED90EF /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EBE992669EA7E00ED90EF /* NewsResponse.swift */; };
+		42AAADF5266E332A002F4A4A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AAADF4266E332A002F4A4A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		428EBE902669E3B900ED90EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		428EBE962669E78500ED90EF /* NewsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiService.swift; sourceTree = "<group>"; };
 		428EBE992669EA7E00ED90EF /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
+		42AAADF4266E332A002F4A4A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				428EBE822669E3B800ED90EF /* AppDelegate.swift */,
 				428EBE842669E3B800ED90EF /* SceneDelegate.swift */,
+				42AAADF4266E332A002F4A4A /* SettingsViewController.swift */,
 				428EBE862669E3B800ED90EF /* ViewController.swift */,
 				428EBE982669EA5500ED90EF /* Networking */,
 				428EBE882669E3B800ED90EF /* Main.storyboard */,
@@ -156,6 +159,7 @@
 				428EBE832669E3B800ED90EF /* AppDelegate.swift in Sources */,
 				428EBE852669E3B800ED90EF /* SceneDelegate.swift in Sources */,
 				428EBE972669E78500ED90EF /* NewsApiService.swift in Sources */,
+				42AAADF5266E332A002F4A4A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
