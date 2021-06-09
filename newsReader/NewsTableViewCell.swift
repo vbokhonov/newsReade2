@@ -17,7 +17,9 @@ class NewsTableViewCell: UITableViewCell {
     func setupWith (_ articles: Article) {
         newsTitleLable.text = articles.title
         newsDescriptionLable.text = articles.articleDescription
-        newsImageView.kf.indicatorType = .activity
-        newsImageView.kf.setImage(with: URL(string: articles.urlToImage))
+//        newsImageView.kf.setImage(with: URL(string: articles.urlToImage))
+        newsImageView.kf.setImage(
+            with: URL(string: articles.urlToImage),
+            placeholder: UIImage(named: "breaking-news"))
     }
 }
