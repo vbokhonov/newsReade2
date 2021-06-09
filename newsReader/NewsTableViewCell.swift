@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsTableViewCell: UITableViewCell {
     
@@ -16,7 +17,7 @@ class NewsTableViewCell: UITableViewCell {
     func setupWith (_ articles: Article) {
         newsTitleLable.text = articles.title
         newsDescriptionLable.text = articles.articleDescription
-//        newsImageView.image = articles.urlToImage
+        newsImageView.kf.indicatorType = .activity
+        newsImageView.kf.setImage(with: URL(string: articles.urlToImage))
     }
-
 }
