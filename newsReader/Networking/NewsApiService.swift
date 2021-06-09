@@ -10,16 +10,26 @@ import Foundation
 class NewsApiService {
     
     private let session = URLSession.shared
+    private let endpoint = "/v2/everything"
+//     private let endpoint = "/v2/top-headlines"
+    private let sources = "abc-news,associated-press,bbc-news"
+    private let apiKey = "1c12d0d191fc4097952a7d35c7a69bc5"
+//    private let query = "Mischief"
     
     func getNews(completion: @escaping (([Article]) -> Void)) {
-        let request = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?sources=abc-news,associated-press,bbc-news&apiKey=1c12d0d191fc4097952a7d35c7a69bc5")!)
+//        let request = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?sources=abc-news,associated-press,bbc-news&apiKey=1c12d0d191fc4097952a7d35c7a69bc5")!)
         
-        //        var comp = URLComponents()
-        //        comp.queryItems = [
-        //            URLQueryItem(name: <#T##String#>, value: <#T##String?#>)
-        //        ]
-        //
-        //        comp.url
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "newsapi.org"
+        urlComponents.path = endpoint
+        urlComponents.queryItems = [
+            URLQueryItem(name: "sources", value: sources),
+//            URLQueryItem(name: "q", value: query),
+            URLQueryItem(name: "apiKey", value: apiKey)
+        ]
+
+        let request = URLRequest(url: URL(string: urlComponents.url!.absoluteString)!)
         
         session.dataTask(with: request) { data, response, error in
             if let error = error {
