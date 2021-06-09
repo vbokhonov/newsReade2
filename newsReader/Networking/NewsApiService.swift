@@ -7,31 +7,19 @@
 
 import Foundation
 
-struct Articles: Codable {
-    let title: String
-    let description: String
-}
-
-struct News: Codable {
-    let articles: Articles
-    let urlToImage: String
-}
-
-struct UrlConstructor {
-    let domain: String = "https://newsapi.org/v2/sources?"
-    let category: String // business entertainment general health science sports technology
-    let language: String // en ru
-    let country: String // us ua
-    let apiKey: String = "apiKey=1c12d0d191fc4097952a7d35c7a69bc5"
-}
-
 class NewsApiService {
     
     private let session = URLSession.shared
     
-    func getNews(completion: @escaping (([News]) -> Void)) {
-        let url = UrlConstructor(category: "&", language: "&", country: "&")
-        let request = URLRequest(url: URL(string: url.domain+url.category+url.language+url.country+url.apiKey)!)
+    func getNews(completion: @escaping (([Article]) -> Void)) {
+        let request = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?sources=abc-news,associated-press,bbc-news&apiKey=1c12d0d191fc4097952a7d35c7a69bc5")!)
+        
+        //        var comp = URLComponents()
+        //        comp.queryItems = [
+        //            URLQueryItem(name: <#T##String#>, value: <#T##String?#>)
+        //        ]
+        //
+        //        comp.url
         
         session.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -44,11 +32,11 @@ class NewsApiService {
             if httpResponse.statusCode == 200,
                let data = data {
                 
-                print(String(data: data, encoding: .utf8))
+//                print(String(data: data, encoding: .utf8))
                 
                 do {
                     let newsResponse = try JSONDecoder().decode(NewsResponse.self, from: data)
-                    completion(newsResponse.results)
+                    completion(newsResponse.articles)
                 } catch {
                     print(error.localizedDescription)
                 }
