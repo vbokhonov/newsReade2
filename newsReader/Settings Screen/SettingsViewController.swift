@@ -10,6 +10,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     let sectionsList: [String] = ["Sort","Sources","Language"]
+    let languageList: [String] = ["English","French"]
     
     @IBOutlet weak var settingsTableView: UITableView!
     
