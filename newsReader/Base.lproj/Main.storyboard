@@ -98,6 +98,21 @@
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="88.392857142857139"/>
         </scene>
+        <!--News View Controller-->
+        <scene sceneID="DI1-fi-80c">
+            <objects>
+                <viewController id="7aE-WM-Yrc" customClass="NewsViewController" customModule="newsReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3x0-S2-Mtr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Lm-hz-bOC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Lf-SM-HIk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="864"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="oR1-mW-PQc">
             <objects>

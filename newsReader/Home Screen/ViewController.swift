@@ -33,13 +33,20 @@ class ViewController: UIViewController {
 //            }
         }
     }
-
-
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return article.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            guard let selectedPath = tableView.indexPathForSelectedRow else { return }
+            if let target = segue.destination as? NewsViewController {
+                target.newsUrl = ("$0.url")
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
